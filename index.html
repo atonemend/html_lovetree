@@ -1,10 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>献给那个调皮捣蛋的小高同学</title>
-<link type="text/css" rel="stylesheet" href="renxi/default.css">
+<link rel="stylesheet" href="renxi/default.css">
 <script type="text/javascript" src="renxi/jquery.min.js"></script>
 <script type="text/javascript" src="renxi/jscex.min.js"></script>
 <script type="text/javascript" src="renxi/jscex-parser.js"></script>
@@ -23,13 +23,19 @@
 </style>
 </head>
 <body>
-    <audio id="bgm" autoplay loop>
+<audio id="bgm" autoplay loop muted>
   <source src="renxi/mii.mp3" type="audio/mp3" />
+  <source src="renxi/mii.ogg" type="audio/ogg" />
   您的浏览器不支持音频播放。
 </audio>
 
+<!-- 提供一个按钮来解除静音 -->
+<button onclick="document.getElementById('bgm').muted = false;">
+  点击开启声音
+</button>
+
 <script>
-  // 在用户交互时解除静音
+  // 当用户点击页面任意位置时，解除静音并开始播放
   document.addEventListener('click', function() {
     const bgm = document.getElementById('bgm');
     if (bgm) {
@@ -38,6 +44,7 @@
     }
   });
 </script>
+</body>
 
 <div id="main">
   <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(Chrome)或者火狐(Firefox)浏览器，或者其他游览器的最新版本。</div>
